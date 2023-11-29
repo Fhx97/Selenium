@@ -80,3 +80,51 @@ driver.maximize_window()
 # time.sleep(3)
 # driver.close()
 
+# xpath是一种在XML文档(可拓展标记语言，主要用于传输数据)中查找信息的语言。
+# html文档的结果和标签遵循XML的基本规则，因此xpath可以有效用于在html文档中定位元素。
+# # xpath绝对路径
+# driver.get("http://www.baidu.com")
+# driver.find_element(By.XPATH,"/html/body/div/div/div[3]/a[4]").click()
+# time.sleep(3)
+# driver.close()
+# driver.quit()
+
+# # xpath根据id和class定位
+# driver.get("http://www.baidu.com")
+# # driver.find_element(By.XPATH,"//input[@id='kw']").send_keys("丰小帅")
+# driver.find_element(By.XPATH,"//input[@class='s_ipt']").send_keys("丰小帅")
+# time.sleep(3)
+# driver.close()
+
+# # 多个属性组合定位
+# driver.get("http://www.baidu.com")
+# driver.find_element(By.XPATH,"//input[@class='s_ipt' and @id='kw']").send_keys("丰小帅")
+# time.sleep(3)
+# driver.close()
+
+# # 对多组数据进行下标定位
+# driver.get("http://www.baidu.com")
+# driver.find_element(By.XPATH,"//div[@id='s-top-left']/a[4]").click()
+# time.sleep(3)
+# driver.close()
+
+# # 文本等于
+# driver.get("http://www.baidu.com")
+# driver.find_element(By.XPATH,"//span[text()='为中国式现代化营造有利法治条件']").click()
+# time.sleep(3)
+# driver.close()
+
+# # 文本包含
+# driver.get("http://www.baidu.com")
+# driver.find_element(By.XPATH,"//span[contains(text(),'阿姨')]").click()
+# time.sleep(3)
+# driver.close()
+
+# 同级定位
+driver.get("http://www.baidu.com")
+# 下一级
+# driver.find_element(By.XPATH,"//a[contains(text(),'贴吧') and @class = 'mnav c-font-normal c-color-t']/following-sibling::a[2]").click()
+# 上一级
+driver.find_element(By.XPATH,"//a[contains(text(),'贴吧') and @class = 'mnav c-font-normal c-color-t']/preceding-sibling::a[2]").click()
+time.sleep(3)
+driver.close()
